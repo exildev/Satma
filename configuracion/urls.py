@@ -5,7 +5,10 @@ from django.contrib import admin
 import views
 
 urlpatterns = [
-    url(r'configuracion/list/', views.ConfiguracionListView.as_view(), name="configuracion_list"),
-    url(r'tiposensor/list/', views.TipoSensorListView.as_view(), name="tiposensor_list"),
-    url(r'nivelalerta/list/', views.NivelAlertaListView.as_view(), name="nivelalerta_list"),
+    url(r'configuracion/list/$', views.ConfiguracionListView.as_view(), name="configuracion_list"),
+    url(r'tiposensor/list/$', views.TipoSensorListView.as_view(), name="tiposensor_list"),
+    url(r'nivelalerta/list/$', views.NivelAlertaListView.as_view(), name="nivelalerta_list"),
+
+    url(r'configuracion/form/$', views.ConfiguracionFormView.as_view(), name="configuracion_form"),
+    url(r'configuracion/form/(?P<pk>\d+)/$', views.ConfiguracionFormView.as_view(), name="configuracion_edit"),
 ]
