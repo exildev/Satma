@@ -23,6 +23,10 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^dashboard', TemplateView.as_view(template_name="dashboard.html")),
     url(r'^rest/', include('configuracion.urls')),
-
+    url(r'^configuracion', TemplateView.as_view(template_name="configuracionsem.html")),
+    url(r'^info/general/', TemplateView.as_view(template_name="infogeneral.html")),
+	url(r'^info/geo/', TemplateView.as_view(template_name="infogeo.html")),
+	url(r'^redes/', TemplateView.as_view(template_name="redes.html")),
+	url(r'^reportes/', TemplateView.as_view(template_name="reportes.html")),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

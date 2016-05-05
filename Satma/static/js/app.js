@@ -1,5 +1,10 @@
 angular.module('satma',['ngRoute','satma.controllers'])
 
+.config(function($interpolateProvider) {
+	$interpolateProvider.startSymbol('[[');
+	$interpolateProvider.endSymbol(']]');
+})
+
 .config(
 function($routeProvider, $locationProvider, $httpProvider){
 	//$httpProvider.defaults.headers.common.Authorization = 'Token 1';
@@ -8,18 +13,29 @@ function($routeProvider, $locationProvider, $httpProvider){
 		templateUrl: '/dashboard/',
 		controller: 'dashboard'
 	})
-	.when('/ventas',{
-		templateUrl: 'ventas.html'
+	.when('/configuracion',{
+		templateUrl: '/configuracion/',
+		controller: 'configuracion'
 	})
-	.when('/requisicion',{
-		templateUrl: 'requisicion.html',
-		controller:'RequisicionController'
+	.when('/info/general',{
+		templateUrl: '/info/general/',
+		controller: 'infog'
 	})
-	.when('/inventario',{
-		templateUrl:'inventario.html'
+	.when('/redes',{
+		templateUrl: '/redes/',
+		controller: 'redes'
 	})
-	.when('/recetas',{
-		templateUrl:'recetas.html'
+	.when('/reportes',{
+		templateUrl: '/reportes/',
+		controller: 'reportes'
+	})
+	.when('/info/geo',{
+		templateUrl: '/info/geo',
+		controller: 'infogeo'
+	})
+	.when('/semaforo',{
+		templateUrl: '/semaforo/',
+		controller: 'semaforo'
 	})
 	.otherwise({
 		redirectTo: '/dashboard'
