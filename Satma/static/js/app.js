@@ -1,5 +1,10 @@
 angular.module('satma',['ngRoute','satma.controllers'])
 
+.config(function($interpolateProvider) {
+	$interpolateProvider.startSymbol('[[');
+	$interpolateProvider.endSymbol(']]');
+})
+
 .config(
 function($routeProvider, $locationProvider, $httpProvider){
 	//$httpProvider.defaults.headers.common.Authorization = 'Token 1';

@@ -1,13 +1,25 @@
 <style type="text/css">
 .demo-card-wide.mdl-card {
-	width: 512px;
+	width: 310px;
 	/*margin: 0 auto;*/
 
 }
 .demo-card-wide > .mdl-card__title {
 	color: #fff;
 	height: 176px;
-	background-color: rgb(10, 200, 10);
+	
+}
+.color1{
+	background-color: green;
+}
+.color2{
+	background-color: yellow;
+}
+.color3{
+	background-color: red;
+}
+.color4{
+	background-color: orange;
 }
 .demo-card-wide > .mdl-card__menu {
 	color: #fff;
@@ -16,22 +28,20 @@
 	margin: 0 auto;
 }
 </style>
-
+<div class="content-grid mdl-grid">
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell center">
+	 	<input class="mdl-textfield__input" ng-model="data.nombre" type="text" id="sample3">
+	    <label class="mdl-textfield__label" for="sample3">Nombre Configuracion</label>
+	 </div>
+</div>
 <section id="form" class="content-grid mdl-grid">
-	<br>
-	<div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell center">
-	  <div class="mdl-card__title">
-	    <h2 class="mdl-card__title-text">Configuracion Semaforo</h2>
+	<br>  
+	<div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell center" ng-repeat="n in [1,2,3,4]">
+	  <div class="mdl-card__title color[[n]]">
+	    <h2 class="mdl-card__title-text">Configuracion Semaforo [[n]]</h2>
 	  </div>
 	  <div class="mdl-card__supporting-text">
 	    <form action="#">
-	     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-	     	<input class="mdl-textfield__input" ng-model="data.nombre" type="text" id="sample3">
-		    <label class="mdl-textfield__label" for="sample3">Nombre Configuracion</label>
-	     </div>
-	     <br>
-	     <div class="mdl-card__actions mdl-card--border">
-		 <div>
 		  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 		    <input class="mdl-textfield__input" ng-model="data.nombre" type="text" id="sample3">
 		    <label class="mdl-textfield__label" for="sample3">Nombre</label>
@@ -45,11 +55,6 @@
 		    <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
 		    <label class="mdl-textfield__label" for="sample5">Descripción</label>
 		  </div>
-		  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-		  	<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-			  Enviar
-			</button>
-		  </div>
 		</form>
 	  </div>
 	  <div class="mdl-card__menu">
@@ -58,10 +63,7 @@
 	    </button>
 	  </div>
 	</div>
-	  <div class="mdl-card__menu">
-	    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-	      <i class="material-icons">traffic</i>
-	    </button>
-	  </div>
-	</div>
+ 
 </section>
+
+<a id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--raised mdl-button--colored mdl-color-text--accent-contrast">Guarda</a>
