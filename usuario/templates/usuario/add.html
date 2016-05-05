@@ -1,0 +1,10 @@
+<form action="{% url "user-add" %}" method="POST" id="form">
+    {% csrf_token %}
+    <ul>
+       {{ form.as_ul }}
+    </ul>
+    <ul>
+    	<li><input type="reset"></li>
+    	<li><input type="submit"></li>
+    </ul>
+</form>
